@@ -12,7 +12,7 @@
     {
       "type": "Microsoft.Storage/storageAccounts",
       "apiVersion": "2022-09-01",
-      "name": "storageacc",  // Storage account name (must be globally unique)
+      "name": "storageacc34221"
       "location": "[resourceGroup().location]",
       "sku": {
         "name": "Standard_LRS"
