@@ -26,6 +26,19 @@ This project demonstrates how to deploy foundational Azure infrastructure using 
 
 ---
 
+### 🔹 Step 1: Create a Resource Group (`RG-1`)
+
+**What I did:**
+
+- Used Azure CLI to create a Resource Group named `RG-1` in the `australiasoutheast` region.
+- This group serves as the container for all the resources deployed in this project.
+
+**Command:**
+```bash
+az group create --name RG-1 --location australiasoutheast
+```
+---
+
 ##  Architecture Diagram
 
 ![Architecture Diagram](Network-Diagram.drawio.png)
