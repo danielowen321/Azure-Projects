@@ -28,4 +28,4 @@ This project demonstrates how to deploy foundational Azure infrastructure using 
 
 ##  Architecture Diagram
 
-![Architecture Diagram](./azure-basic-rg-diagram.png)
+![Architecture Diagram](Network-Diagram.drawio.png)
