@@ -7,7 +7,7 @@ Welcome to my **Azure Projects Portfolio**! Here, I showcase my hands-on experie
 
 This repository includes the following Azure-related projects:
 
-1. **[Resource Group and Basic Resource Setup](01-resource-group-basics)**  
+1. **[Resource Group and Basic Resource Setup](https://github.com/danielowen321/Azure-Projects/tree/main/deploy-basic-azure-infrastructure)**  
    Learn how to create and manage resource groups and deploy basic resources in Azure using both the portal and Azure CLI.
 
 2. **[Virtual Machine Deployment](02-vm-deployment)**  
