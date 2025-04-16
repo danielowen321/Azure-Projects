@@ -29,3 +29,6 @@ This project demonstrates how to deploy foundational Azure infrastructure using 
 ##  Architecture Diagram
 
 ![Architecture Diagram](Network-Diagram.drawio.png)
+
+##  ARM Template
+You can find the ARM template for deploying the resources in this project [here](./arm-template.json).
