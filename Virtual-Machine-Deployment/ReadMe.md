@@ -34,9 +34,7 @@ This project demonstrates how to deploy and configure a basic Azure Virtual Mach
 3. Set the **Resource Group Name** to `VirtualMachineDeployment`.
 4. Choose **Region** as `Australia East`.
 5. Click **Review + Create**, then **Create**.
-
-**Screenshot to Capture:**
-- **Resource Group Creation Page** showing the name (`VirtualMachineDeployment`) and region (`Australia Southeast`) selected. This should show the configuration before you click "Create."
+![Step 1 - Create RG](./screenshots/resource-group-deployment.png)
 
 ---
 
@@ -59,9 +57,8 @@ This project demonstrates how to deploy and configure a basic Azure Virtual Mach
    - **Address space:** `10.0.0.0/16`
    - **Subnet:** Click **+ Add subnet** and enter `10.0.1.0/24` as the subnet address range.
 5. Click **Review + Create**, then **Create**.
+![Step 1 - Create RG](./screenshots/Vnet-deployment.png)
 
-**Screenshot to Capture:**
-- **Virtual Network Creation Page** showing the name (`VM_VNet`), address space (`10.0.0.0/16`), and subnet (`10.0.1.0/24`) selected. You should also see **Australia Southeast** as the region.
 ---
 
 ### 🔹 **Step 3: Create a Virtual Machine (VM)**
@@ -90,9 +87,7 @@ This project demonstrates how to deploy and configure a basic Azure Virtual Mach
    - **Virtual Network:** Select `VM-1-vnet`.
    - **Subnet:** Choose the `default` subnet you created earlier (`10.0.1.0/24`).
 6. Click **Review + Create**, then **Create**.
-
-**Screenshot to Capture:**
-- **Virtual Machine Creation Page** showing the selected image (Ubuntu 20.04 LTS), size (B1s), authentication method (SSH public key), and the **Networking** section showing the `VM-1-vnet` and subnet `10.0.1.0/24`.
+![Step 1 - Create RG](./screenshots/Virtual-machine-deployment.png)
 
 ---
 
@@ -122,6 +117,7 @@ Action:
 **Enter the configuration above.**
 
 **Click Add to save the rule.**
+![Step 1 - Create RG](./screenshots/HTTP-inbound-rule.png)
 
 ---
 
@@ -155,5 +151,6 @@ Accessing Apache:
 After Apache was installed and started, I accessed the default Apache page by navigating to the public IP of the VM (http://20.92.255.206) in a web browser.
 
 The Apache default page ("It works!") was displayed, confirming that Apache was correctly serving content.
-
+![Step 1 - Create RG](./screenshots/custom-script.png)
+![Step 1 - Create RG](./screenshots/apache-web-server.png)
 
