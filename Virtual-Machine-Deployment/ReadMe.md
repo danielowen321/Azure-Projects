@@ -26,13 +26,13 @@ This project demonstrates how to deploy and configure a basic Azure Virtual Mach
 ### 🔹 **Step 1: Create a Resource Group**
 
 - **Name:** `VirtualMachineDeployment`  
-- **Region:** `Australia Southeast`  
+- **Region:** `Australia East`  
 
 **Instructions:**
 1. In the [Azure Portal](https://portal.azure.com/), navigate to **Resource Groups**.
 2. Click **+ Add**.
 3. Set the **Resource Group Name** to `VirtualMachineDeployment`.
-4. Choose **Region** as `Australia Southeast`.
+4. Choose **Region** as `Australia East`.
 5. Click **Review + Create**, then **Create**.
 
 **Screenshot to Capture:**
@@ -96,18 +96,7 @@ This project demonstrates how to deploy and configure a basic Azure Virtual Mach
 
 ---
 
-### 🔹 **Step 4: Install Apache2 Using a Custom Script (Post-Deployment)**
-What I did:
-
-After the VM was successfully deployed, I used the **Extensions + Applications** feature in the Azure Portal to run a custom Bash script that installs and starts the **Apache2 web server.**
-
-Script used:
-
-<pre> <code> #!/bin/bash apt update apt install apache2 -y systemctl start apache2 </code> </pre>
-
----
-
-### 🔹 **Step 5: Configure NSG Rules for Inbound Access**
+### 🔹 **Step 4: Configure NSG Rules for Inbound Access**
 What I did:
 
 Added a **Network Security Group (NSG)** inbound rule to allow **HTTP (port 80)** traffic so the Apache web server is accessible publicly.
@@ -118,7 +107,7 @@ Added a **Network Security Group (NSG)** inbound rule to allow **HTTP (port 80)*
 
 **Protocol: TCP**
 
-**Priority: 1001**
+**Priority: 320**
 
 **Action: Allow**
 
@@ -133,4 +122,38 @@ Action:
 **Enter the configuration above.**
 
 **Click Add to save the rule.**
+
+---
+
+### 🔹 **Step 5: Install Apache2 Using a Custom Script (Post-Deployment)**
+
+What I did:
+- Initially, I tried to automate the installation of Apache2 by using the **Extensions + Applications** feature in the Azure Portal to run a custom **Bash script** during the VM's post-deployment process. The script was intended to update the package list, install Apache2, and start the service.
+
+Script I used:
+
+```bash
+#!/bin/bash
+apt update
+apt install apache2 -y
+systemctl start apache2
+```
+However, the script extension did not work as expected, and the Apache2 service was not installed automatically.
+
+As a result, I accessed the VM via SSH and manually installed the Apache2 web server by running the following commands:
+
+```bash
+Copy
+Edit
+sudo apt update              # Update package lists
+sudo apt install apache2 -y   # Install Apache2
+sudo systemctl start apache2  # Start Apache service
+sudo systemctl enable apache2 # Enable Apache to start on boot
+```
+After running these commands, Apache2 was successfully installed and started.
+Accessing Apache:
+After Apache was installed and started, I accessed the default Apache page by navigating to the public IP of the VM (http://20.92.255.206) in a web browser.
+
+The Apache default page ("It works!") was displayed, confirming that Apache was correctly serving content.
+
 
